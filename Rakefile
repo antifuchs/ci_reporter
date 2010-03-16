@@ -8,11 +8,10 @@ begin
   File.open("Manifest.txt", "w") {|f| MANIFEST.each {|n| f << "#{n}\n"} }
   require 'hoe'
   require File.dirname(__FILE__) + '/lib/ci/reporter/version'
-  hoe = Hoe.new("ci_reporter", CI::Reporter::VERSION) do |p|
-    p.rubyforge_name = "caldersphere"
-    p.url = "http://caldersphere.rubyforge.org/ci_reporter"
-    p.author = "Nick Sieger"
-    p.email = "nick@nicksieger.com"
+  hoe = Hoe.new("schubert-ci_reporter", CI::Reporter::VERSION) do |p|
+    p.url = "http://github.com/schubert/ci_reporter"
+    p.author = "Michael Schubert"
+    p.email = "michael@schubert.cx"
     p.summary = "CI::Reporter allows you to generate reams of XML for use with continuous integration systems."
     p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
     p.description = p.paragraphs_of('README.txt', 0...1).join("\n\n")
