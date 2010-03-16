@@ -40,7 +40,7 @@ module CI
       attr_accessor :testcases
       attr_accessor :stdout, :stderr
       def initialize(name)
-        suite_name = name.to_s.gsub(/#/, "%23")
+        suite_name = name.to_s.gsub(/#/, " ")
         super(suite_name) # RSpec passes a "description" object instead of a string
         if potential_classname = suite_name.split(" ").first
           self.classname = potential_classname if defined?(potential_classname) == "constant"
